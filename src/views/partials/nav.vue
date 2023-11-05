@@ -4,7 +4,7 @@ import Logo from "@/components/logo.vue";
 
 <template>
     <nav>
-        <div class="mx-auto max-w-screen-2xl flex flex-col sm:flex-row space-y-4 sm:space-y-0 justify-between items-center">
+        <div class="mx-auto max-w-7xl flex flex-col sm:flex-row space-y-4 sm:space-y-0 justify-between items-center">
             <Logo/>
 
             <div class="flex justify-center items-center gap-2">

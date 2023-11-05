@@ -1,6 +1,6 @@
 <template>
     <footer>
-        <div class="mx-auto max-w-screen-2xl bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 my-5">
+        <div class="mx-auto max-w-7xl bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 my-5">
             <img alt="" class="mx-auto -mb-6" src="/lary-newsletter-icon.png" style="width: 145px;">
             <h5 class="text-3xl">Stay in touch with the latest posts</h5>
             <p class="text-sm mt-3">Promise to keep the inbox clean. No bugs.</p>

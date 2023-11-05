@@ -74,7 +74,7 @@ async function updatePosts() {
             <ProfileSkeleton v-else-if="$route.query.author"/>
 
             <div v-if="!category || ($route.query.author && !author)"
-                 class="space-y-2 lg:space-y-0 lg:space-x-4 mt-5">
+                 class="space-y-2 lg:space-y-0 lg:space-x-4 mt-5 animate-pulse">
                 <HeaderItem class="h-8 w-full lg:w-36 bg-gray-200"/>
                 <HeaderItem class="h-8 w-full lg:w-48 bg-gray-200"/>
             </div>
@@ -91,7 +91,7 @@ async function updatePosts() {
             </div>
         </header>
 
-        <main v-if="categories && (!$route.query.author || author)" class="max-w-screen-2xl mx-auto mt-6 space-y-6">
+        <main v-if="categories && (!$route.query.author || author)" class="max-w-7xl mx-auto mt-6 space-y-6">
             <PostThumbnailSkeleton v-if="!posts" />
 
             <div v-else-if="posts.length" class="lg:grid lg:grid-cols-6">
