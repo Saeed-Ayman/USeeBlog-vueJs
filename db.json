@@ -1,178 +1,214 @@
 {
-    "authors": [
-        {
-            "id": 1,
-            "img": "https://i.pravatar.cc/?img=12",
-            "name": "Saeed Ayman",
-            "username": "@saeed-ayman"
-        },
-        {
-            "id": 2,
-            "img": "https://i.pravatar.cc/?img=13",
-            "name": "Mohammed Atef",
-            "username": "@mohammed-atef"
-        },
-        {
-            "id": 3,
-            "img": "https://i.pravatar.cc/?img=14",
-            "name": "AbdElrahman Mohammed",
-            "username": "@abd-elrahman-mohamed"
-        }
-    ],
-    "categories": [
-        {
-            "id": 1,
-            "name": "All Categories",
-            "slug": "all"
-        },
-        {
-            "id": 2,
-            "name": "Mathematics",
-            "slug": "mathematics"
-        },
-        {
-            "id": 3,
-            "name": "Algebra and logic gates",
-            "slug": "algebra-and-logic-gates"
-        },
-        {
-            "id": 4,
-            "name": "Algorithms",
-            "slug": "algorithms"
-        }
-    ],
-    "posts": [
-        {
-            "id": 1,
-            "slug": "title-post-1",
-            "img": "https://picsum.photos/id/1/900/900",
-            "categoryId": 2,
-            "title": "Title Post 1",
-            "body": "Description Post 1",
-            "created_at": 1698385727661,
-            "excerpt": "<p>Excerpt post 1</p>",
-            "authorId": 1
-        },
-        {
-            "id": 2,
-            "slug": "title-post-2",
-            "img": "https://picsum.photos/id/2/900/900",
-            "categoryId": 3,
-            "title": "Title Post 2",
-            "body": "Description Post 2",
-            "created_at": 1698385327661,
-            "excerpt": "lorem lorem lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem",
-            "authorId": 3
-        },
-        {
-            "id": 3,
-            "slug": "title-post-3",
-            "img": "https://picsum.photos/id/3/900/900",
-            "categoryId": 4,
-            "title": "Title Post 3",
-            "body": "Description Post 3",
-            "created_at": 1698385007661,
-            "excerpt": "<p>Excerpt post 3</p>",
-            "authorId": 2
-        },
-        {
-            "id": 4,
-            "slug": "title-post-4",
-            "img": "https://picsum.photos/id/4/900/900",
-            "categoryId": 4,
-            "title": "Title Post 4",
-            "body": "Description Post 4",
-            "created_at": 1698384007661,
-            "excerpt": "<p>Excerpt post 4</p>",
-            "authorId": 3
-        },
-        {
-            "id": 5,
-            "slug": "title-post-5",
-            "img": "https://picsum.photos/id/5/900/900",
-            "categoryId": 3,
-            "title": "Title Post 5",
-            "body": "Description Post 5",
-            "created_at": 1698383007661,
-            "excerpt": "<p>Excerpt post 5</p>",
-            "authorId": 1
-        },
-        {
-            "id": 6,
-            "slug": "title-post-6",
-            "img": "https://picsum.photos/id/6/900/900",
-            "categoryId": 4,
-            "title": "Title Post 6",
-            "body": "Description Post 6",
-            "created_at": 1698382007661,
-            "excerpt": "<p>Excerpt post 6</p>",
-            "authorId": 2
-        },
-        {
-            "id": 7,
-            "slug": "title-post-7",
-            "img": "https://picsum.photos/id/7/900/900",
-            "categoryId": 2,
-            "title": "Title Post 7",
-            "body": "Description Post 7",
-            "created_at": 1698385727661,
-            "excerpt": "<p>Excerpt post 7</p>",
-            "authorId": 3
-        },
-        {
-            "id": 8,
-            "slug": "title-post-8",
-            "img": "https://picsum.photos/id/8/900/900",
-            "categoryId": 3,
-            "title": "Title Post 8",
-            "body": "Description Post 8",
-            "created_at": 1698385327661,
-            "excerpt": "<p>Excerpt post 8</p>",
-            "authorId": 3
-        },
-        {
-            "id": 9,
-            "slug": "title-post-9",
-            "img": "https://picsum.photos/id/9/900/900",
-            "categoryId": 4,
-            "title": "Title Post 9",
-            "body": "Description Post 9",
-            "created_at": 1698385007661,
-            "excerpt": "<p>Excerpt post 9</p>",
-            "authorId": 2
-        },
-        {
-            "id": 10,
-            "slug": "title-post-10",
-            "img": "https://picsum.photos/id/10/900/900",
-            "categoryId": 2,
-            "title": "Title Post 10",
-            "body": "Description Post 10",
-            "created_at": 1698384007661,
-            "excerpt": "<p>Excerpt post 10</p>",
-            "authorId": 3
-        },
-        {
-            "id": 11,
-            "slug": "title-post-11",
-            "img": "https://picsum.photos/id/11/900/900",
-            "categoryId": 3,
-            "title": "Title Post 11",
-            "body": "Description Post 11",
-            "created_at": 1698383007661,
-            "excerpt": "<p>Excerpt post 11</p>",
-            "authorId": 1
-        },
-        {
-            "id": 12,
-            "slug": "title-post-12",
-            "img": "https://picsum.photos/id/12/900/900",
-            "categoryId": 4,
-            "title": "Title Post 12",
-            "body": "Description Post 12",
-            "created_at": 1698382007661,
-            "excerpt": "<p>Excerpt post 12</p>",
-            "authorId": 2
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "img": "https://i.pravatar.cc/?img=12",
+      "name": "Saeed Ayman",
+      "username": "@saeed-ayman",
+      "email": "saeed-ayman@gmail.com",
+      "password": "password",
+      "token": "$2y$10$LRe7d2tYHf8/cm3HfIsEPuhN1wjrIDZthA6LMJjIF5wNtEjLW1SlC"
+    },
+    {
+      "id": 2,
+      "img": "https://i.pravatar.cc/?img=13",
+      "name": "Mohammed Atef",
+      "username": "@mohammed-atef",
+      "email": "mohammed-atef@gmail.com",
+      "password": "password",
+      "token": "$2y$10$i8AimmY3OXV1MV10kuqFSeEiNZzCrw1rjbq2UpRAIbwbvlEDddFaK"
+    },
+    {
+      "id": 3,
+      "img": "https://i.pravatar.cc/?img=14",
+      "name": "AbdElrahman Mohammed",
+      "username": "@abd-elrahman-mohamed",
+      "email": "abd-elrahman-mohamed@gmail.com",
+      "password": "password",
+      "token": "$2y$10$u37K2794./TM.jTxkKEnGO5NBl4CaNZfXZf4Bx6yNr3RMP7aRENX6"
+    },
+    {
+      "name": "Charles White",
+      "email": "dyvymysu@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "img": "https://i.pravatar.cc/?img=99",
+      "username": "@dyvymysu",
+      "token": "8sd51mrv7cr4jl1ahpjogw32c2otuipl5chizdedx52wtrbxtjmibf",
+      "id": 4
+    },
+    {
+      "name": "Kyla Figueroa",
+      "email": "cikoba@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "img": "https://i.pravatar.cc/?img=47",
+      "username": "@cikoba",
+      "token": "3dvsgt5cjjgxach614u4k7235d169ifqzdxudsxuhufoyorxjq6hz",
+      "id": 5
+    },
+    {
+      "name": "Lev Blanchard",
+      "email": "regimos@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "img": "https://i.pravatar.cc/?img=2",
+      "username": "@regimos",
+      "token": "eeudyzs388hfm4zi74trfp33y3nspp49ew63qyg9rvkhqkw0kotc69",
+      "id": 6
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "All Categories",
+      "slug": "all"
+    },
+    {
+      "id": 2,
+      "name": "Mathematics",
+      "slug": "mathematics"
+    },
+    {
+      "id": 3,
+      "name": "Algebra and logic gates",
+      "slug": "algebra-and-logic-gates"
+    },
+    {
+      "id": 4,
+      "name": "Algorithms",
+      "slug": "algorithms"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "slug": "title-post-1",
+      "img": "https://picsum.photos/id/1/900/900",
+      "categoryId": 2,
+      "title": "Title Post 1",
+      "body": "Description Post 1",
+      "created_at": 1698385727661,
+      "excerpt": "<p>Excerpt post 1</p>",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "slug": "title-post-2",
+      "img": "https://picsum.photos/id/2/900/900",
+      "categoryId": 3,
+      "title": "Title Post 2",
+      "body": "Description Post 2",
+      "created_at": 1698385327661,
+      "excerpt": "lorem lorem lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem",
+      "userId": 3
+    },
+    {
+      "id": 3,
+      "slug": "title-post-3",
+      "img": "https://picsum.photos/id/3/900/900",
+      "categoryId": 4,
+      "title": "Title Post 3",
+      "body": "Description Post 3",
+      "created_at": 1698385007661,
+      "excerpt": "<p>Excerpt post 3</p>",
+      "userId": 2
+    },
+    {
+      "id": 4,
+      "slug": "title-post-4",
+      "img": "https://picsum.photos/id/4/900/900",
+      "categoryId": 4,
+      "title": "Title Post 4",
+      "body": "Description Post 4",
+      "created_at": 1698384007661,
+      "excerpt": "<p>Excerpt post 4</p>",
+      "userId": 3
+    },
+    {
+      "id": 5,
+      "slug": "title-post-5",
+      "img": "https://picsum.photos/id/5/900/900",
+      "categoryId": 3,
+      "title": "Title Post 5",
+      "body": "Description Post 5",
+      "created_at": 1698383007661,
+      "excerpt": "<p>Excerpt post 5</p>",
+      "userId": 1
+    },
+    {
+      "id": 6,
+      "slug": "title-post-6",
+      "img": "https://picsum.photos/id/6/900/900",
+      "categoryId": 4,
+      "title": "Title Post 6",
+      "body": "Description Post 6",
+      "created_at": 1698382007661,
+      "excerpt": "<p>Excerpt post 6</p>",
+      "userId": 2
+    },
+    {
+      "id": 7,
+      "slug": "title-post-7",
+      "img": "https://picsum.photos/id/7/900/900",
+      "categoryId": 2,
+      "title": "Title Post 7",
+      "body": "Description Post 7",
+      "created_at": 1698385727661,
+      "excerpt": "<p>Excerpt post 7</p>",
+      "userId": 3
+    },
+    {
+      "id": 8,
+      "slug": "title-post-8",
+      "img": "https://picsum.photos/id/8/900/900",
+      "categoryId": 3,
+      "title": "Title Post 8",
+      "body": "Description Post 8",
+      "created_at": 1698385327661,
+      "excerpt": "<p>Excerpt post 8</p>",
+      "userId": 3
+    },
+    {
+      "id": 9,
+      "slug": "title-post-9",
+      "img": "https://picsum.photos/id/9/900/900",
+      "categoryId": 4,
+      "title": "Title Post 9",
+      "body": "Description Post 9",
+      "created_at": 1698385007661,
+      "excerpt": "<p>Excerpt post 9</p>",
+      "userId": 2
+    },
+    {
+      "id": 10,
+      "slug": "title-post-10",
+      "img": "https://picsum.photos/id/10/900/900",
+      "categoryId": 2,
+      "title": "Title Post 10",
+      "body": "Description Post 10",
+      "created_at": 1698384007661,
+      "excerpt": "<p>Excerpt post 10</p>",
+      "userId": 3
+    },
+    {
+      "id": 11,
+      "slug": "title-post-11",
+      "img": "https://picsum.photos/id/11/900/900",
+      "categoryId": 3,
+      "title": "Title Post 11",
+      "body": "Description Post 11",
+      "created_at": 1698383007661,
+      "excerpt": "<p>Excerpt post 11</p>",
+      "userId": 1
+    },
+    {
+      "id": 12,
+      "slug": "title-post-12",
+      "img": "https://picsum.photos/id/12/900/900",
+      "categoryId": 4,
+      "title": "Title Post 12",
+      "body": "Description Post 12",
+      "created_at": 1698382007661,
+      "excerpt": "<p>Excerpt post 12</p>",
+      "userId": 2
+    }
+  ]
 }

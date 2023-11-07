@@ -1,23 +1,43 @@
 import Layout from '@/views/partials/layout.vue';
+import GuestLayout from '@/views/partials/guest-layout.vue';
 import Posts from '@/views/posts/index.vue';
 import Post from '@/views/posts/show.vue';
+import Login from '@/views/auth/login.vue';
+import Register from '@/views/auth/register.vue';
 
 export default [
     {
         path: "/",
         name: "home",
         component: Layout,
+        redirect: "/posts",
         children: [
             {
-                path: "",
+                path: "/posts",
                 name: "posts",
                 component: Posts
             },
             {
-                path: "/:slug",
+                path: "/posts/:slug",
                 name: "post",
                 component: Post,
             }
-        ]
+        ],
     },
+    {
+        path: "/",
+        component: GuestLayout,
+        children: [
+            {
+                path: "/login",
+                name: "login",
+                component: Login
+            },
+            {
+                path: "/register",
+                name: "register",
+                component: Register
+            }
+        ]
+    }
 ];

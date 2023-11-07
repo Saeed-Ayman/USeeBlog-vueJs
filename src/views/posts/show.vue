@@ -19,7 +19,7 @@ onMounted(async () => post.value = await ApiPost.show(route.params.slug));
             <div class="col-span-4 lg:text-center lg:pt-14 mb-5">
                 <Img :src="post.img"/>
                 <Time :time="post.created_at" class="mt-6 mb-4"/>
-                <User :user="post.author" class="flex items-center lg:justify-center"/>
+                <User :user="post.user" class="flex items-center lg:justify-center"/>
             </div>
 
             <div class="col-span-8">

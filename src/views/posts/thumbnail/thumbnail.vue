@@ -30,7 +30,7 @@ defineProps({
             <div class="text-sm mt-4 space-y-4" v-html="post.excerpt"></div>
 
             <ThumbnailFooter :readMoreLink="{ name: 'post', params: { slug: post.slug } }"
-                             :user="post.author"/>
+                             :user="post.user"/>
         </div>
     </article>
 </template>

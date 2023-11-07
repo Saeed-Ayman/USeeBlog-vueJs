@@ -9,7 +9,7 @@ import PostThumbnailSkeleton from "@/views/posts/thumbnail/skeleton.vue";
 
 import ApiPost from "@/services/APIS/Post";
 import ApiCategory from "@/services/APIS/Category";
-import ApiAuthor from "@/services/APIS/Author";
+import ApiAuthor from "@/services/APIS/User.js";
 
 import {onMounted, ref, watch} from "vue";
 import {useRoute} from "vue-router";
@@ -46,7 +46,8 @@ watch(() => route.query.author, async () => {
     await updatePosts();
 })
 
-const updateAuthor = async () => author.value = await ApiAuthor.show(route.query.author);
+const updateAuthor = async () => author.value = route.query.author ? await ApiAuthor.show({username: route.query.author}) : null;
+
 
 function updateCategory() {
     category.value = route.query.category ?
@@ -58,7 +59,7 @@ function updateCategory() {
 async function updatePosts() {
     const args = {};
 
-    if (author.value) args.authorId = author.value.id;
+    if (author.value) args.userId = author.value.id;
     if (category.value && category.value.slug !== 'all') args.categoryId = category.value.id;
 
     posts.value = await ApiPost.index(args);
@@ -70,7 +71,7 @@ async function updatePosts() {
         <header class="max-w-xl mx-auto mt-20 text-center">
             <div class="text-4xl">Latest <span class="text-blue-500">USee</span> News</div>
 
-            <Profile v-if="$route.query.author && author" :author="author"/>
+            <Profile v-if="author" :author="author"/>
             <ProfileSkeleton v-else-if="$route.query.author"/>
 
             <div v-if="!category || ($route.query.author && !author)"
@@ -92,7 +93,7 @@ async function updatePosts() {
         </header>
 
         <main v-if="categories && (!$route.query.author || author)" class="max-w-7xl mx-auto mt-6 space-y-6">
-            <PostThumbnailSkeleton v-if="!posts" />
+            <PostThumbnailSkeleton v-if="!posts"/>
 
             <div v-else-if="posts.length" class="lg:grid lg:grid-cols-6">
                 <PostThumbnail v-for=" (post, index) of posts" :key="index" :big="index === 0" :class="{

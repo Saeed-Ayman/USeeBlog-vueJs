@@ -5,7 +5,7 @@ export default class {
     static url = 'posts';
     static with = [
         'category',
-        'author'
+        'user'
     ]
 
     static index(args) {
