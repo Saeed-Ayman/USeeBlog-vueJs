@@ -7,7 +7,7 @@ defineProps({title: String, to: Object, time: Number, categories: Array})
 <template>
     <header>
         <Categories :categories="categories"/>
-        <RouterLink :to="to" class="block mt-2 text-3xl font-semibold">{{ title }}</RouterLink>
+        <RouterLink :to="to" class="inline-block mt-2 text-3xl font-semibold">{{ title }}</RouterLink>
         <Time :time="time"/>
     </header>
 </template>

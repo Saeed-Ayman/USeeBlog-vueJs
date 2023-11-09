@@ -1,22 +1,24 @@
 <script setup>
-defineProps({disabled: Boolean})
+defineProps({disabled: Boolean, classes: [String, Object]})
 </script>
 
 <template>
     <button :class="{
-                'px-4 py-2 w-full font-semibold block flex items-center gap-2 rounded-xl': true,
+                'w-full font-semibold block flex items-center gap-2 rounded-xl': true,
                 'justify-between': !disabled,
                 'justify-start': disabled
             }"
             :disabled="disabled">
-        <span v-if="disabled" class="text-blue-500">
+        <div v-if="disabled" class="text-blue-500 ml-2">
             <v-icon animation="spin-pulse" name="fa-spinner"/>
-        </span>
+        </div>
 
-        <slot/>
+        <div :class="classes" class="flex items-center gap-2">
+            <slot />
+        </div>
 
-        <span v-if="!disabled" class="text-blue-500 -mr-2">
+        <div v-if="!disabled" class="text-blue-500 mr-2">
             <v-icon name="md-keyboardarrowdown"/>
-        </span>
+        </div>
     </button>
 </template>

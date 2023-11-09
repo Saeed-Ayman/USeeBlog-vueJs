@@ -2,13 +2,13 @@ import {createApp} from 'vue';
 import {createPinia} from 'pinia';
 
 import App from '@/views/App.vue';
-import icons from './icons.js';
-import Route from './routes/route.js';
+import icons from '@/icons.js';
+import Route from '@/routes/router.js';
 
-const pinia = createPinia()
+const pinia = createPinia();
 
 createApp(App)
     .component("v-icon", icons)
-    .use(Route)
     .use(pinia)
+    .use(Route)
     .mount('#app');

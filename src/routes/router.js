@@ -1,43 +1,21 @@
-import Layout from '@/views/partials/layout.vue';
-import GuestLayout from '@/views/partials/guest-layout.vue';
-import Posts from '@/views/posts/index.vue';
-import Post from '@/views/posts/show.vue';
-import Login from '@/views/auth/login.vue';
-import Register from '@/views/auth/register.vue';
+import {createRouter, createWebHistory} from 'vue-router';
+import {handler} from '@/routes/middlewares/middleware.js';
+import Routes from './routes.js';
+import User from "@/services/APIS/User.js";
+import {useAuthStore} from "@/stores/useAuthStore.js";
 
-export default [
-    {
-        path: "/",
-        name: "home",
-        component: Layout,
-        redirect: "/posts",
-        children: [
-            {
-                path: "/posts",
-                name: "posts",
-                component: Posts
-            },
-            {
-                path: "/posts/:slug",
-                name: "post",
-                component: Post,
-            }
-        ],
-    },
-    {
-        path: "/",
-        component: GuestLayout,
-        children: [
-            {
-                path: "/login",
-                name: "login",
-                component: Login
-            },
-            {
-                path: "/register",
-                name: "register",
-                component: Register
-            }
-        ]
+const router = createRouter({
+    history: createWebHistory(),
+    routes: Routes,
+    scrollBehavior(to, from) {
+        if (to.path !== from.path) return {top: 0, behavior: "smooth"};
     }
-];
+});
+
+router.beforeEach(async (to) => {
+    await useAuthStore().init();
+    return await handler(to);
+});
+
+
+export default router;

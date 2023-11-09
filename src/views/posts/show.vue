@@ -66,7 +66,7 @@ onMounted(async () => post.value = await ApiPost.show(route.params.slug));
                         </div>
                     </div>
 
-                    <div class="w-80 h-4 bg-gray-300 rounded my-5"></div>
+                    <div class="min-[300px]:w-3/5 w-full h-4 bg-gray-300 rounded my-5"></div>
 
                     <div class="space-y-5">
                         <div class="mt-4 space-y-2">

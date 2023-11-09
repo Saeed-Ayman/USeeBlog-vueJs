@@ -1,7 +1,11 @@
-<script setup>defineProps({src: String})</script>
+<script setup>defineProps({src: String, roundedFull: Boolean})</script>
 
 <template>
     <div class="overflow-hidden">
-        <img :src="src" class="block rounded-xl border border-blue-50" alt="pic"/>
+        <img :class="{
+            'rounded-xl': !roundedFull,
+            'rounded-full': roundedFull,
+            'block border border-blue-50': true,
+        }" :src="src" alt="pic"/>
     </div>
 </template>

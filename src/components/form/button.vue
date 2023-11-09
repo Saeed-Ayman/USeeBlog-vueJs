@@ -1,8 +1,4 @@
-<script setup>
-defineProps({
-    disabled: Boolean
-});
-</script>
+<script setup>defineProps({disabled: Boolean});</script>
 
 <template>
     <button

@@ -6,64 +6,25 @@ import Dropdown from "@/components/dropdown/dropdown.vue";
 import Search from "@/views/posts/header/search.vue";
 import PostThumbnail from './thumbnail/thumbnail.vue';
 import PostThumbnailSkeleton from "@/views/posts/thumbnail/skeleton.vue";
+import CategoriesDropdown from "@/components/category/dropdown.vue";
 
-import ApiPost from "@/services/APIS/Post";
-import ApiCategory from "@/services/APIS/Category";
-import ApiAuthor from "@/services/APIS/User.js";
+import {onMounted, onUnmounted, ref} from "vue";
 
-import {onMounted, ref, watch} from "vue";
-import {useRoute} from "vue-router";
-import {useUpdateRouter} from "@/composables/useUpdateRouter.js";
+import {useCategoriesStore} from "@/stores/useCategoriesStore.js";
+import {usePostsStore} from "@/stores/usePostsStore.js";
+import {useAuthorStore} from "@/stores/useAuthorStore.js";
 
-const posts = ref();
 const error = ref();
-const route = useRoute();
-const categories = ref();
-const category = ref();
-const author = ref();
-const updateRouter = useUpdateRouter();
+
+const posts = usePostsStore();
+const categories = useCategoriesStore();
+const author = useAuthorStore();
 
 onMounted(async () => {
-    try {
-        await updateAuthor();
-        categories.value = await ApiCategory.index();
-        await updateCategory();
-        await updatePosts();
-    } catch (e) {
-        error.value = e;
-    }
+    await author.init();
+    await categories.init();
+    await posts.init();
 })
-
-watch(() => route.query.category, async () => {
-    error.value = posts.value = null;
-    await updateCategory();
-    await updatePosts();
-});
-
-watch(() => route.query.author, async () => {
-    error.value = posts.value = null;
-    await updateAuthor();
-    await updatePosts();
-})
-
-const updateAuthor = async () => author.value = route.query.author ? await ApiAuthor.show({username: route.query.author}) : null;
-
-
-function updateCategory() {
-    category.value = route.query.category ?
-        categories.value.find(c => c.slug === route.query.category) : categories.value.at(0);
-
-    if (!category.value) throw 'Error: can\'t find category';
-}
-
-async function updatePosts() {
-    const args = {};
-
-    if (author.value) args.userId = author.value.id;
-    if (category.value && category.value.slug !== 'all') args.categoryId = category.value.id;
-
-    posts.value = await ApiPost.index(args);
-}
 </script>
 
 <template>
@@ -71,32 +32,32 @@ async function updatePosts() {
         <header class="max-w-xl mx-auto mt-20 text-center">
             <div class="text-4xl">Latest <span class="text-blue-500">USee</span> News</div>
 
-            <Profile v-if="author" :author="author"/>
+            <Profile v-if="author.doneInit && author.active" :author="author.active"/>
             <ProfileSkeleton v-else-if="$route.query.author"/>
 
-            <div v-if="!category || ($route.query.author && !author)"
+            <div v-if="categories.doneInit && author.doneInit"
+                 class="space-y-2 lg:space-y-0 lg:space-x-4 mt-5">
+                <HeaderItem>
+                    <CategoriesDropdown :disabled="!posts.doneInit"/>
+                </HeaderItem>
+
+                <HeaderItem>
+                    <Search :disabled="!posts.doneInit"/>
+                </HeaderItem>
+            </div>
+
+            <div v-else-if="$route.query.author"
                  class="space-y-2 lg:space-y-0 lg:space-x-4 mt-5 animate-pulse">
                 <HeaderItem class="h-8 w-full lg:w-36 bg-gray-200"/>
                 <HeaderItem class="h-8 w-full lg:w-48 bg-gray-200"/>
             </div>
-
-            <div v-else class="space-y-2 lg:space-y-0 lg:space-x-4 mt-5">
-                <HeaderItem>
-                    <Dropdown :active="category" :disabled="!posts" :items="categories"
-                              @choose="(item) => updateRouter('category', item.slug === 'all' ? '' : item.slug)"/>
-                </HeaderItem>
-
-                <HeaderItem>
-                    <Search :disabled="!posts"/>
-                </HeaderItem>
-            </div>
         </header>
 
-        <main v-if="categories && (!$route.query.author || author)" class="max-w-7xl mx-auto mt-6 space-y-6">
-            <PostThumbnailSkeleton v-if="!posts"/>
+        <main v-if="categories.all && author.doneInit" class="max-w-7xl mx-auto mt-6 space-y-6">
+            <PostThumbnailSkeleton v-if="!posts.doneInit"/>
 
-            <div v-else-if="posts.length" class="lg:grid lg:grid-cols-6">
-                <PostThumbnail v-for=" (post, index) of posts" :key="index" :big="index === 0" :class="{
+            <div v-else-if="posts.doneInit" class="lg:grid lg:grid-cols-6">
+                <PostThumbnail v-for=" (post, index) of posts.all" :key="index" :big="index === 0" :class="{
                         'col-span-6': index === 0,
                         'col-span-3': index <= 2 && index !== 0,
                         'col-span-2': index > 2,
