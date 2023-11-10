@@ -4,7 +4,7 @@ defineProps({disabled: Boolean, classes: [String, Object]})
 
 <template>
     <button :class="{
-                'w-full font-semibold block flex items-center gap-2 rounded-xl': true,
+                'w-full lg:max-w-[300px] font-semibold block flex items-center gap-2 rounded-xl': true,
                 'justify-between': !disabled,
                 'justify-start': disabled
             }"
@@ -13,7 +13,7 @@ defineProps({disabled: Boolean, classes: [String, Object]})
             <v-icon animation="spin-pulse" name="fa-spinner"/>
         </div>
 
-        <div :class="classes" class="flex items-center gap-2">
+        <div :class="classes" class="truncate flex items-center gap-2">
             <slot />
         </div>
 

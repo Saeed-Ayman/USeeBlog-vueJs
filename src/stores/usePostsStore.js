@@ -1,6 +1,6 @@
 import {defineStore} from "pinia";
 import ApiPost from "@/services/APIS/Post.js";
-import {ref, watch} from "vue";
+import {onMounted, ref, watch} from "vue";
 import {useCategoriesStore} from "@/stores/useCategoriesStore.js";
 import {useAuthorStore} from "@/stores/useAuthorStore.js";
 import {useRegenerationTimeout} from "@/composables/useRegenerationTimeout.js";

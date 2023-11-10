@@ -1,5 +1,5 @@
 <script setup>
-import Categories from "./categories/categories.vue";
+import Category from "@/components/category/category.vue";
 import Img from "@/components/img.vue";
 import Time from "@/components/time.vue";
 import User from "@/components/user.vue";
@@ -30,7 +30,7 @@ onMounted(async () => post.value = await ApiPost.show(route.params.slug));
                         Back to Posts
                     </RouterLink>
 
-                    <Categories :categories="[post.category]"/>
+                    <Category :category="post.category"/>
                 </div>
 
                 <h1 class="font-bold text-3xl lg:text-4xl my-5">

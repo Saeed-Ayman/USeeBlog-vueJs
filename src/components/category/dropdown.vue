@@ -14,8 +14,8 @@ const updateRouter = useUpdateRouter();
     <Dropdown
         :disabled="disabled"
         :triggerClass="{'ml-4': !disabled, 'mr-4': disabled, 'py-2 w-full': true}"
+        class="w-full"
         classes="my-2">
-
         <template #trigger>{{ categories.active.name }}</template>
 
         <DropdownItem

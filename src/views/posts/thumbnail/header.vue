@@ -1,13 +1,19 @@
 <script setup>
 import Time from "@/components/time.vue";
-import Categories from "../categories/categories.vue";
+import Category from "@/components/category/category.vue";
 
-defineProps({title: String, to: Object, time: Number, categories: Array})
+defineProps({title: String, to: Object, time: Number, category: Object})
 </script>
 <template>
     <header>
-        <Categories :categories="categories"/>
-        <RouterLink :to="to" class="inline-block mt-2 text-3xl font-semibold">{{ title }}</RouterLink>
+        <Category :category="category"/>
+        <RouterLink :to="to" class="title">{{ title }}</RouterLink>
         <Time :time="time"/>
     </header>
 </template>
+
+<style scoped>
+.title {
+    @apply inline-block mt-2 text-3xl font-semibold
+}
+</style>

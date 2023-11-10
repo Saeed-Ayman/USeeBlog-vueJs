@@ -39,7 +39,7 @@ async function onSubmit(e) {
         <Form @submit.prevent="onSubmit">
             <Input name="Email"/>
             <div>
-                <Link class="block w-fit ml-auto" to="" v-text="'Forgot password?'"/>
+                <Link to="" class="block w-fit ml-auto"  v-text="'Forgot password?'"/>
                 <Input class="mt-1" name="Password"/>
             </div>
             <Button :disabled="disabled">Sign in</Button>

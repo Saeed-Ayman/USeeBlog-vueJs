@@ -1,7 +1,8 @@
 import {defineStore} from "pinia";
 import ApiCategory from "@/services/APIS/Category.js";
-import {ref, watch} from "vue";
+import {onMounted, ref, watch} from "vue";
 import {useRoute} from "vue-router";
+import {useErrorStore} from "@/stores/useErrorStore.js";
 
 export const useCategoriesStore = defineStore('categories', () => {
     const route = useRoute();
@@ -10,6 +11,7 @@ export const useCategoriesStore = defineStore('categories', () => {
     const all = ref(null);
     const doneInit = ref(false);
 
+    onMounted(init);
     watch(() => route.query.category, updateActiveCategory);
 
     async function init() {
@@ -20,8 +22,11 @@ export const useCategoriesStore = defineStore('categories', () => {
     }
 
     function updateActiveCategory() {
-        active.value = route.query.category ?
-            all.value.find(c => c.slug === route.query.category) : all.value.at(0);
+            active.value = route.query.category ?
+                all.value.find(c => c.slug === route.query.category) : all.value.at(0);
+
+        if (!active.value)
+            useErrorStore().set("Error: Category can not found!");
     }
 
     return {all, active, init, doneInit};
