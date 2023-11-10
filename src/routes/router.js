@@ -3,6 +3,7 @@ import {handler} from '@/routes/middlewares/middleware.js';
 import Routes from './routes.js';
 import User from "@/services/APIS/User.js";
 import {useAuthStore} from "@/stores/useAuthStore.js";
+import {useLoadingStore} from "@/stores/useLoadingStore.js";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -13,8 +14,14 @@ const router = createRouter({
 });
 
 router.beforeEach(async (to) => {
+    const loadingStore = useLoadingStore();
+    loadingStore.start('middleware');
+
     await useAuthStore().init();
-    return await handler(to);
+    const redirect = await handler(to);
+
+    loadingStore.end('middleware');
+    return redirect;
 });
 
 

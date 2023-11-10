@@ -1,17 +1,18 @@
 <script setup>
 import Logo from '@/components/logo.vue';
-import {useAuthStore} from "@/stores/useAuthStore.js";
+import {useLoadingStore} from "@/stores/useLoadingStore.js";
 
-const auth = useAuthStore();
+const loadingStore = useLoadingStore();
 </script>
 
 <template>
-    <RouterView v-if="auth.doneInit" />
-    <div v-else class="min-h-full flex flex-col justify-center items-center gap-5 bg-gray-100">
-        <Logo class="pointer-events-none" />
+    <div v-if="loadingStore.loading"
+         class="min-h-full flex flex-col justify-center items-center gap-5 bg-gray-100">
+        <Logo class="pointer-events-none"/>
         <div class="flex justify-center items-center gap-2">
-            <v-icon animation="spin-pulse" name="fa-spinner" class="text-blue-500"/>
+            <v-icon animation="spin-pulse" class="text-blue-500" name="fa-spinner"/>
             Loading
         </div>
     </div>
+    <RouterView v-else/>
 </template>

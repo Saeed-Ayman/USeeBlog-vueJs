@@ -8,14 +8,11 @@ const slug = computed(() => props.name
         .trim()
         .replace(/[^\w\s-]/g, '')
         .replace(/[\s_-]+/g, '_')
-    // .replace(/^-+|-+$/g, '')
 );
 
 const type = computed(() => {
     if (props.name.toLowerCase().indexOf('email') !== -1) return 'email';
-
     if (props.name.toLowerCase().indexOf('password') !== -1) return 'password';
-
     return 'text';
 })
 </script>
@@ -31,7 +28,7 @@ const type = computed(() => {
         />
         <label
             :for="slug"
-            class="absolute text-gray-500 bg-gray-100 text-sm duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">
+            class="absolute text-gray-500 bg-gray-50 text-sm duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">
             {{ name }}
         </label>
     </div>
