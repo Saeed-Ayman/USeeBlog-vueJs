@@ -1,6 +1,6 @@
 <script setup>
 import UserSkeleton from "@/skeletons/components/userSkeleton.vue";
-import Skeleton from "@/skeletons/components/Skeleton.vue";
+import Skeleton from "@/skeletons/components/skeleton.vue";
 import CategorySkeleton from "@/skeletons/components/categorySkeleton.vue";
 import TitleSkeleton from "@/skeletons/components/titleSkeleton.vue";
 import TimeSkeleton from "@/skeletons/components/timeSkeleton.vue";
