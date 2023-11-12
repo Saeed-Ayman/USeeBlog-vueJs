@@ -27,7 +27,7 @@ function logout() {
         </template>
 
         <DropdownItem @click="profile">Profile</DropdownItem>
-        <DropdownItem>Settings</DropdownItem>
+        <DropdownItem @click="router.push({name: 'profile.settings'})">Settings</DropdownItem>
         <hr/>
         <DropdownItem @click="logout">Logout</DropdownItem>
     </Dropdown>

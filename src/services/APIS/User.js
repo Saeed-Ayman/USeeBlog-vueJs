@@ -14,7 +14,6 @@ export default class {
 
     static async store(user) {
         // TODO : Make validation
-
         const rand = () => Math.random().toString(36).substring(2);
 
         user.img = `https://i.pravatar.cc/?img=${Math.floor(Math.random() * 100)}`;
@@ -22,6 +21,15 @@ export default class {
         user.token = rand() + rand() + rand() + rand() + rand();
 
         return await Fetch.post(this.url, user);
+    }
+
+    static async update(id, user) {
+        // TODO : Make validation
+        return await Fetch.patch(`${this.url}/${id}`, user);
+    }
+
+    static async destroy(id) {
+        return await Fetch.delete(`${this.url}/${id}`);
     }
 }
 

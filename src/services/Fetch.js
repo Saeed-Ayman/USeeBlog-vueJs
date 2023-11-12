@@ -7,8 +7,6 @@ export default class {
         DELETE: 'DELETE',
     }
 
-    static cache = {};
-
     static URL_APP = import.meta.env.VITE_APP_API_URL;
 
     static async customFetch(url, method = this.METHODS.GET, data = {}) {
@@ -30,10 +28,7 @@ export default class {
     }
 
     static get(url) {
-        // TODO : scaling this cache to be limited
-        if (this.cache[url]) return this.cache[url];
-
-        return this.cache[url] = this.customFetch(url);
+        return this.customFetch(url);
     }
 
     static post(url, data) {

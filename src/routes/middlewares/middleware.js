@@ -1,5 +1,6 @@
 const MIDDLEWARES = {
-    guest: () => import('./guest.js')
+    guest: () => import('./guest.js'),
+    auth: () => import('./auth.js'),
 }
 
 export async function handler(to) {

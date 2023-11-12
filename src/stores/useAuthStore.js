@@ -12,10 +12,10 @@ export const useAuthStore = defineStore('auth', () => {
 
     const isAuth = computed(() => user.value !== null);
 
-    async function init() {
+    async function init(force = false) {
         doneInit.value = false;
 
-        if (!isAuth.value) {
+        if (!isAuth.value || force) {
             const token = localStorage.getItem(key);
 
             if (token) {

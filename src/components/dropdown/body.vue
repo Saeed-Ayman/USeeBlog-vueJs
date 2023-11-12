@@ -9,7 +9,21 @@
 
 <style scoped>
 .body {
-    @apply py-2 absolute bg-gray-100 rounded-xl top-11 min-w-full overflow-y-auto max-w-xl max-h-56 z-50 cursor-pointer
+    @apply
+    py-2
+    absolute
+    bg-gray-100
+    rounded-xl
+    top-11
+    min-w-full
+    overflow-y-auto
+    max-w-xl
+    max-h-56
+    z-50
+    cursor-pointer
+    shadow
+    border
+    border-gray-200
 }
 
 .body::-webkit-scrollbar {

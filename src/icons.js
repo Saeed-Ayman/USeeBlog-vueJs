@@ -1,16 +1,24 @@
-import { OhVueIcon, addIcons } from "oh-vue-icons";
-import { MdKeyboardarrowleft, MdKeyboardarrowdown, MdErrorRound } from "oh-vue-icons/icons/md";
-import { RiCloseCircleLine } from "oh-vue-icons/icons/ri";
-import { FaSpinner } from "oh-vue-icons/icons/fa";
-import { BiSearch  } from "oh-vue-icons/icons/bi";
-
-addIcons(
+import {OhVueIcon, addIcons} from "oh-vue-icons";
+import {
+    BiSearch,
+    BiThreeDotsVertical,
+    FaPen,
+    FaSpinner,
+    RiCloseCircleLine,
     MdKeyboardarrowleft,
     MdKeyboardarrowdown,
     MdErrorRound,
-    RiCloseCircleLine,
-    FaSpinner,
+} from "oh-vue-icons/icons";
+
+addIcons(
     BiSearch,
+    BiThreeDotsVertical,
+    FaPen,
+    FaSpinner,
+    RiCloseCircleLine,
+    MdKeyboardarrowleft,
+    MdKeyboardarrowdown,
+    MdErrorRound,
 );
 
 export default OhVueIcon;

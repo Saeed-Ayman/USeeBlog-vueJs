@@ -1,3 +1,3 @@
 <template>
-    <div class="bg-gray-200 rounded m-1.5"/>
+    <div class="bg-gray-200 rounded my-1.5"/>
 </template>

@@ -15,7 +15,7 @@ export default class {
     static async show(slug) {
         const data = (await Fetch.get(`${this.url}?${ApiHelper.with(this.with)}&slug=${slug}`)).at(0);
 
-        if (!data) throw 'Error: Slug not found';
+        if (!data) throw 'Error: Post not found!';
 
         return data;
     }
